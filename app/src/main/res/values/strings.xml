@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GIFDecoder</string>
+    <string name="gif_decoder">GIF Decoder</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="choose_gif">Choose GIF</string>
+    <string name="msg_install_file_manager">Please install a File Manager.</string>
+    <string name="select_file_upload">Select Only GIF File</string>
+    <string name="msg_validate_file_not_selected">Unable to select file. Try with some other file.</string>
+    <string name="msg_validate_choose_only_gif">Choose only gif</string>
+    <string name="msg_smthing_went_wrong">Something went wrong with app. Please try again</string>
+    <string name="share_sprite">Share Sprite</string>
+    <string name="msg_like_this_app">Like this app</string>
+    <string name="exit_msg">Please rate the app on PlayStore.\nThank you...</string>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/inc_title"
+        layout="@layout/inc_toolbar"></include>
+
+    <TextView
+        android:id="@+id/textview_choose_gif"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/choose_btn_h"
+        android:layout_below="@+id/inc_title"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/choose_btn_margin"
+        android:background="@drawable/rect"
+        android:gravity="center"
+        android:text="@string/choose_gif"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/textsize_normal"
+        android:textStyle="bold" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifimagebtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linlayout"
+        android:layout_below="@+id/textview_choose_gif"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:background="@color/transparent" />
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/loader"
+        android:layout_width="@dimen/loader_w_h"
+        android:layout_height="@dimen/loader_w_h"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:background="@color/transparent"
+        android:src="@drawable/loader"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/linlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textview_sprite_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/textsize_small"
+            android:visibility="visible" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gif_preview"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="0.4"
+            android:scaleType="fitXY" />
+    </LinearLayout>
+</RelativeLayout>

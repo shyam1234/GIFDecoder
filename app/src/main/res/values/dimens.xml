@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textsize_small">16sp</dimen>
+    <dimen name="textsize_normal">18sp</dimen>
+    <dimen name="textsize_big">22sp</dimen>
+    <dimen name="choose_btn_h">60dp</dimen>
+    <dimen name="choose_btn_margin">10dp</dimen>
+    <dimen name="loader_w_h">150dp</dimen>
+</resources>
