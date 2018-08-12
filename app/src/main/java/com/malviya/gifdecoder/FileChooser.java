@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.support.annotation.RequiresApi;
 import android.widget.Toast;
 
 import java.net.URISyntaxException;
@@ -31,6 +32,7 @@ public class FileChooser {
      * @param uri     The Uri to query.
      * @author paulburke
      */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static String getPathAdvance(final Context context, final Uri uri) {
 
         final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
