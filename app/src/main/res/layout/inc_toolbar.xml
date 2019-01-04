@@ -15,6 +15,19 @@
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/textsize_big" />
 
+
+
+    <TextView
+        android:id="@+id/textview_save_frames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/textview_save"
+        android:text="@string/save_frames"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/textsize_small" />
+
     <TextView
         android:id="@+id/textview_save"
         android:layout_width="wrap_content"
@@ -24,7 +37,7 @@
         android:layout_toLeftOf="@+id/textview_share"
         android:text="@string/save"
         android:textColor="@color/colorWhite"
-        android:textSize="@dimen/textsize_normal" />
+        android:textSize="@dimen/textsize_small" />
 
     <TextView
         android:id="@+id/textview_share"
@@ -34,5 +47,5 @@
         android:layout_centerVertical="true"
         android:text="@string/share"
         android:textColor="@color/colorWhite"
-        android:textSize="@dimen/textsize_normal" />
+        android:textSize="@dimen/textsize_small" />
 </RelativeLayout>

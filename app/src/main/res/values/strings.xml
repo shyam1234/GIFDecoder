@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">GIFDecoder</string>
     <string name="gif_decoder">GIF Decoder</string>
-    <string name="share">Share</string>
-    <string name="save">Save</string>
+    <string name="share">Open\nFolder</string>
+    <string name="save">Save\nSprite</string>
+    <string name="save_frames">Save\nFrames</string>
     <string name="choose_gif">Choose GIF</string>
     <string name="msg_install_file_manager">Please install a File Manager.</string>
     <string name="select_file_upload">Select Only GIF File</string>
@@ -12,4 +13,6 @@
     <string name="share_sprite">Share Sprite</string>
     <string name="msg_like_this_app">Like this app</string>
     <string name="exit_msg">Please rate the app on PlayStore.\nThank you...</string>
+    <string name="support">For Support</string>
+    <string name="string_ads">ca-app-pub-3857992721987002/5850991703</string>
 </resources>

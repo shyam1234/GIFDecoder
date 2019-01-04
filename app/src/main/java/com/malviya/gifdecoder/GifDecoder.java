@@ -24,7 +24,7 @@ import pl.droidsonroids.gif.GifDrawable;
  */
 public class GifDecoder {
     private static final String TAG = GifDecoder.class.getSimpleName();
-    private static final String FOLDER_NAME = "GIF_Decoder";
+    public static final String FOLDER_NAME = "GIF_Decoder";
     private int TOTAL_FRAME = 0;
     private Context mContext;
 
@@ -152,6 +152,37 @@ public class GifDecoder {
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, pSpriteName);
     }
 
+    public void saveFrames(final Bitmap b, final String pSpriteName, final ISaveCallback pCallback) throws IOException {
+        File rootFile = new File(Environment.getExternalStorageDirectory(), "/" + FOLDER_NAME + "/");
+        rootFile.mkdirs();
+        new AsyncTask<String, Void, File>() {
+            @Override
+            protected File doInBackground(String... param) {
+                File rootFile = new File(Environment.getExternalStorageDirectory()+"/"+FOLDER_NAME, "/" + pSpriteName.split("_")[0] + "/");
+                rootFile.mkdirs();
+                File file = new File(rootFile, param[0] + ".png");
+                try {
+                    file.createNewFile();
+                    FileOutputStream out = new FileOutputStream(file);
+                    b.compress(Bitmap.CompressFormat.PNG, 100, out);
+                    if (out != null) {
+                        out.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Log.d(TAG, "frame path " + file.getAbsolutePath());
+                return file;
+            }
+
+            @Override
+            protected void onPostExecute(File file) {
+                //super.onPostExecute(file);
+                pCallback.onSaved(file);
+            }
+        }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, pSpriteName);
+    }
+
     public void shareSprite(final Bitmap b, final String pDescription, final ISaveCallback pCallback) {
         new AsyncTask<Void, Void, Intent>() {
 
@@ -194,6 +225,7 @@ public class GifDecoder {
         public int total_frames;
         public int row;
         public int col;
+        public ArrayList<FrameHolder> frameList;
 
         public FrameHolder(Bitmap bitmap) {
             this.bitmap = bitmap;
@@ -206,6 +238,10 @@ public class GifDecoder {
             this.total_frames = total_frames;
             this.row = row;
             this.col = col;
+        }
+
+        public void setFrameList(ArrayList<FrameHolder> pList) {
+            frameList = pList;
         }
     }
 
@@ -230,6 +266,7 @@ public class GifDecoder {
                     list.add(new FrameHolder(gif.seekToFrameAndGet(index)));
                 }
                 b = createSprite(list, Integer.parseInt(param[1]), Integer.parseInt(param[2]));
+                b.setFrameList(list);
             } catch (Exception e) {
                 Log.e(TAG, "showExtractFrames doInBackground " + e.getMessage());
             }
@@ -242,22 +279,3 @@ public class GifDecoder {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

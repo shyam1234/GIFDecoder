@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "208427780138",
+    "firebase_url": "https://selfiewithsantaplus.firebaseio.com",
+    "project_id": "selfiewithsantaplus",
+    "storage_bucket": "selfiewithsantaplus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208427780138:android:3bb3755606946bba",
+        "android_client_info": {
+          "package_name": "com.malviya.gifdecoder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208427780138-4ecrqj483hnoec3dq9mc0ocrh4897ps5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLaqBo9i5VHCdK4c7pk_gcMyQQWXSF440"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208427780138:android:b85085d734b33118",
+        "android_client_info": {
+          "package_name": "com.malviya.selfiewithsantaplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208427780138-4ecrqj483hnoec3dq9mc0ocrh4897ps5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLaqBo9i5VHCdK4c7pk_gcMyQQWXSF440"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      },
+      "admob_app_id": "ca-app-pub-3857992721987002~2552419687"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208427780138:android:877f3cf254f9a594",
+        "android_client_info": {
+          "package_name": "com.malviya.selfiewithsentaplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208427780138-4ecrqj483hnoec3dq9mc0ocrh4897ps5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLaqBo9i5VHCdK4c7pk_gcMyQQWXSF440"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      },
+      "admob_app_id": "ca-app-pub-3857992721987002~4707809739"
+    }
+  ],
+  "configuration_version": "1"
+}
