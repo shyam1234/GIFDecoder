@@ -3,6 +3,7 @@
     <string name="gif_decoder">GIF Decoder</string>
     <string name="share">Open\nFolder</string>
     <string name="save">Save\nSprite</string>
+    <string name="tnc">Term\nCondition</string>
     <string name="save_frames">Save\nFrames</string>
     <string name="choose_gif">Choose GIF</string>
     <string name="msg_install_file_manager">Please install a File Manager.</string>

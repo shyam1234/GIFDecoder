@@ -1,7 +1,10 @@
 package com.malviya.gifdecoder;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.ComponentName;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -14,7 +17,11 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mSupport;
     private InterstitialAd mInterstitialAd;
     private String mState;
+    private TextView mTnC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mChooseGif = (TextView) findViewById(R.id.textview_choose_gif);
         mLoader = (GifImageView) findViewById(R.id.loader);
         mSaveFrames = (TextView) findViewById(R.id.textview_save_frames);
+        mTnC = (TextView) findViewById(R.id.textview_term_condition);
         //mGifDecoderImageView.setOnClickListener(this);
         mSave.setAlpha(0.5f);
         mSave.setEnabled(false);
@@ -120,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mChooseGif.setOnClickListener(this);
         mSaveFrames.setOnClickListener(this);
         mSupport.setOnClickListener(this);
+        mTnC.setOnClickListener(this);
     }
 
 
@@ -162,6 +172,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Log.e(TAG, "textview_save_frames onClick" + e.getMessage());
                 }
                 break;
+            case R.id.textview_term_condition:
+                openPopupWebview(MainActivity.this,"file:///android_asset/termncondition.html");
+                break;
             case R.id.textview_share:
                 try {
                     openFolder();
@@ -187,6 +200,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
 
     private void openWhatsAppGroupChat() {
         final Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://api.whatsapp.com/send?phone=918904188389"));
@@ -367,4 +381,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onResume();
         showAdvertice();
     }
+
+    private void openPopupWebview(Context pContext, String pURL) {
+        final Dialog dialog = new Dialog(pContext);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.webview_layout);
+        dialog.show();
+        WebView wv = (WebView) dialog
+                .findViewById(R.id.webView);
+
+        wv.loadUrl(pURL);
+        wv.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+
+                return true;
+            }
+        });
+
+        dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+
+            @Override
+            public boolean onKey(DialogInterface dialog, int keyCode,
+                                 KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+                    dialog.dismiss();
+                }
+
+                return false;
+            }
+        });
+
+    }
+
 }

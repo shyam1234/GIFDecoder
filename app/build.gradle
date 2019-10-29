@@ -6,8 +6,8 @@ android {
         applicationId "com.malviya.gifdecoder"
         minSdkVersion 20
         targetSdkVersion 26
-        versionCode 6
-        versionName "1.0.6"
+        versionCode 8
+        versionName "1.0.8"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

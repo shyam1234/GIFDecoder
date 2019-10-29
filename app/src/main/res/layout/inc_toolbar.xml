@@ -18,12 +18,24 @@
 
 
     <TextView
+        android:id="@+id/textview_term_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/textview_title"
+        android:text="@string/tnc"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/textsize_small" />
+
+    <TextView
         android:id="@+id/textview_save_frames"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/textview_save"
+        android:layout_toRightOf="@+id/textview_term_condition"
         android:text="@string/save_frames"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/textsize_small" />
@@ -33,7 +45,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
+        android:layout_toStartOf="@+id/textview_share"
         android:layout_toLeftOf="@+id/textview_share"
         android:text="@string/save"
         android:textColor="@color/colorWhite"
